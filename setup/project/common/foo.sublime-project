@@ -1,0 +1,81 @@
+{
+    "folders":
+    [
+        {
+            "path": ".",
+            "follow_symlinks": true,
+            "folder_exclude_patterns": ["build"]
+        }
+    ],
+
+    "build_systems":
+    [
+        {
+            "name": "web debug",
+            "working_dir": "${project_path}",
+            "env":
+            {
+                "EDITOR": "subl -w"
+            },
+            "shell_cmd": "../Sublime-web/dev/exec.sh ../Sublime-web/dev/build.sh debug",
+
+            "variants":
+            [
+                {
+                    "name": "Run",
+                    "shell_cmd": "../Sublime-web/dev/exec.sh \"set -e; ../Sublime-web/dev/build.sh debug; ../Sublime-web/dev/run.sh\""
+                },
+                {
+                    "name": "Clean",
+                    "shell_cmd": "../Sublime-web/dev/exec.sh ../Sublime-web/dev/clean.sh debug"
+                },
+                {
+                    "name": "Publish",
+                    "shell_cmd": "../Sublime-web/dev/exec.sh \"set -e; ../Sublime-web/dev/publish.sh; ../Sublime-web/dev/run.sh\""
+                },
+                {
+                    "name": "Web Down",
+                    "shell_cmd": "../Sublime-web/dev/exec.sh ../Sublime-web/dev/web-down.sh"
+                },
+                {
+                    "name": "Web Up",
+                    "shell_cmd": "../Sublime-web/dev/exec.sh ../Sublime-web/dev/web-down.sh up"
+                }
+            ]
+        },
+
+        {
+            "name": "web release",
+            "working_dir": "${project_path}",
+            "env":
+            {
+                "EDITOR": "subl -w"
+            },
+            "shell_cmd": "../Sublime-web/dev/exec.sh ../Sublime-web/dev/build.sh release",
+
+            "variants":
+            [
+                {
+                    "name": "Run",
+                    "shell_cmd": "../Sublime-web/dev/exec.sh \"set -e; ../Sublime-web/dev/build.sh release; ../Sublime-web/dev/run.sh\""
+                },
+                {
+                    "name": "Clean",
+                    "shell_cmd": "../Sublime-web/dev/exec.sh ../Sublime-web/dev/clean.sh release"
+                },
+                {
+                    "name": "Publish",
+                    "shell_cmd": "../Sublime-web/dev/exec.sh \"set -e; ../Sublime-web/dev/publish.sh; ../Sublime-web/dev/run.sh\""
+                },
+                {
+                    "name": "Web Down",
+                    "shell_cmd": "../Sublime-web/dev/exec.sh ../Sublime-web/dev/web-down.sh"
+                },
+                {
+                    "name": "Web Up",
+                    "shell_cmd": "../Sublime-web/dev/exec.sh ../Sublime-web/dev/web-down.sh up"
+                }
+            ]
+        }
+    ]
+}

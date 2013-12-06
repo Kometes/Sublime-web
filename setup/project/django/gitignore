@@ -1,0 +1,6 @@
+.DS_Store
+build
+*.sublime-workspace
+user-config.sh
+*.pyc
+__pycache__

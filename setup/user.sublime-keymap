@@ -1,0 +1,5 @@
+[
+    { "keys": ["super+shift+c"], "command": "build" },
+    { "keys": ["super+shift+x"], "command": "build", "args": {"variant": "Run"} },
+    { "keys": ["super+shift+b"], "command": "build", "args": {"variant": "Publish"} },
+]
